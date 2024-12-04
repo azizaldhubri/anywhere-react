@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e074c4be.css",
+    "main.js": "/static/js/main.b0dcc490.js",
+    "static/media/data-oic.png": "/static/media/data-oic.024e2cd73a87f0877e1d.png",
+    "static/media/form.jpg": "/static/media/form.013807ae96d8efd2e670.jpg",
+    "static/media/contact.jpg": "/static/media/contact.6d52770caa3bb86ae89f.jpg",
+    "static/media/notedtask.png": "/static/media/notedtask.1b7c8b4a037750ffd4ca.png",
+    "static/media/rar.jpg": "/static/media/rar.2236f6ea8ae1d5218b88.jpg",
+    "static/media/excel.jpg": "/static/media/excel.359e0e341d011fca9467.jpg",
+    "static/media/logo.png": "/static/media/logo.f8969f86b3a50f75b3c2.png",
+    "static/media/logoall.png": "/static/media/logoall.3ef0f5b138314bacbb40.png",
+    "static/media/users1.jfif": "/static/media/users1.4f89a550764e49c90dc0.jfif",
+    "static/media/images.jfif": "/static/media/images.79b5a91b309e3a06545b.jfif",
+    "static/media/contact2.jfif": "/static/media/contact2.0208af7e1ef635f36397.jfif",
+    "static/media/task.jfif": "/static/media/task.6d93c3e5299f01ce18d4.jfif",
+    "index.html": "/index.html",
+    "main.e074c4be.css.map": "/static/css/main.e074c4be.css.map",
+    "main.b0dcc490.js.map": "/static/js/main.b0dcc490.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e074c4be.css",
+    "static/js/main.b0dcc490.js"
+  ]
+}

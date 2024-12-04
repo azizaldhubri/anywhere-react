@@ -1,0 +1,5 @@
+{
+    "git.decorations.enabled": false,
+    "git.enableStatusBarSync": true,
+    "npm.enableRunFromFolder": false
+}
