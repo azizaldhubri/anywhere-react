@@ -1,13 +1,88 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  box-sizing: border-box;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  /* font-family: "Cairo", sans-serif !important;  */
+  font-family: "Amiri", sans-serif !important; 
+  direction: rtl;
+  text-align: right;
+  background-color: #6e93a3;
+background:#6e93a3;
+  /* font-family:'Georgia, serif',    */
+}
+body.ltr {
+  direction: ltr;
+  text-align: left;
+}
+.container{
+  margin: 0 auto;
+  border: 1px solid black;
+}
+.h-100{
+  height: 100vh;
+}
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.row .col-12{
+  width: 100%;
+}
+.row .col-6{
+  width: 50%;
+}
+
+.container{border: none;
+  background:#edf4f7;
+}
+
+.back_btn{background: #79b98c;
+color: black;
+width: 150px;
+height: 50px;
+display: flex;
+ 
+align-items: center;
+justify-content: center;
+border-radius: 2px;
+}
+.bg-page{
+
+  background:#edf4f7;
+  
+  /* background:#e4e5e6; */
+  /* background:#14b7d7  */
+}
+.flex_center{display: flex;
+align-items: center;
+justify-content: center;}
+
+.custom-dropdown-button {
+  background-color: white; /* لون مخصص */
+  border-color: #f0ad4e;     /* نفس لون الزر */
+  color: black;   
+  
+}
+
+
+.cairo  {
+  /* font-family: "Cairo", serif; */
+  /* font-family: "Cairo"; */
+  /* font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:"slnt"  ; */
+}
+
+.custom-radio {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* لنقل الزر لليمين */
+}
+
+.custom-radio input {
+  margin-left: 10px; /* ترك مسافة بين الزر والنص */
 }
