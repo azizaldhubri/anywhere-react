@@ -6,8 +6,10 @@ export const typeFile=[
         type:'img',
         src_type:'image/jpeg',
         
-        pathimg:'http://127.0.0.1:8000/storage',
-        // pathimg:'http://127.0.0.1:8000/storage/app/public/assets',
+        
+        // pathimg:'http://127.0.0.1:8000/storage',
+        // pathimg:'http://127.0.0.1:8000/storage/app/public/assets'
+             pathimg:'https://free-001.yemenhosting.com/api',
         pathDownload:'http://127.0.0.1:8000/api/download',
         width:'40px' ,
         height:'40px',
