@@ -429,7 +429,7 @@ const handleClick = () => {
                     <div className="w-50   h-100 border postion-relative bg-white p-2 "
                     style={{position:"fixed",
                         left:'0',
-                        top:'0',
+                        top:'70px',
                         zIndex:'3',
                         overflowX:'hidden',
                         height:'100vh',
