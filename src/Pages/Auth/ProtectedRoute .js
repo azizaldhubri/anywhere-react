@@ -82,7 +82,7 @@ function handleChangeValue(){
 
  
  //-------------------------------------------------------------------------------------------
-    return token ? (       
+ return token ? (       
     //    (username.user=='' )  ?
        ( isValidited ===false)  ?
        (
@@ -90,8 +90,9 @@ function handleChangeValue(){
         ): (isHasValidity === true && newLink===permission) ?
         (        
         <Outlet/>
-       ):(          
-        <Error403 role={user.role}/>
+       ): (isHasValidity === true && newLink !==permission)?
+       (<LoadingSubmit/>):         
+        (<Error403 role={user.role}/>
         // <Outlet/>
         )
          ):(
