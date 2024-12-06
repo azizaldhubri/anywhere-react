@@ -10,7 +10,8 @@ export const UserProvider = ({ children }) => {
 
   // const navigate=useNavigate();
   const [user, setUser] = useState('');
-  const [permissions, setPermissions] = useState([]);   
+  const [permissions, setPermissions] = useState([]);  
+   const [update, setUpdate] = useState('ok');
   useEffect(()=>{
     async function User_role( ) {
       await  Axios.get(`${USER}`)           
@@ -19,7 +20,7 @@ export const UserProvider = ({ children }) => {
         .catch((data)=>console.log(data) ) 
     }
     User_role();            
-},[])
+},[update])
 
 async function fetchPermissions(id) {
     await Axios.get(`roles/${id}`)
@@ -37,7 +38,7 @@ async function fetchPermissions(id) {
 // console.log(permissions)
 
   return (
-    <UserContext.Provider value={{ user, setUser,permissions, setPermissions }}>
+    <UserContext.Provider value={{ user, setUser,permissions, setPermissions ,update, setUpdate }}>
       {children}
     </UserContext.Provider>
   );
