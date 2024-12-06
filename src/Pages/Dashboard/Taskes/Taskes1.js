@@ -280,7 +280,7 @@ const Comment = ({ comment ,type}) => {
                             <p className="m-0">{StringSlice((File_Name(item,i)),10)}</p>   
                             <a className="fs-6"  href={typfile.type =='img'?`${typfile.pathDownload}/${File_Path(item,i)}`
                             :`${typfile.pathDownload}/${File_Path(item,i)}`} >Download</a>
-                            <a className="fs-6"  href={`https://free-001.yemenhosting.com/api/download/${File_Path(item,i)}`} >Downloadd</a>
+                         
 
                             </div>
                         )}
