@@ -14,8 +14,9 @@ const ProtectedRoute = ({ permission }) => {
 
     const USERNAME=useContext(UserContext)
     // const username=USERNAME.user ;
-    
+        const {update, setUpdate} = useContext(UserContext);   
     const permissions=USERNAME.permissions;
+ 
     
     // const navigate=useNavigate();   
  
@@ -58,7 +59,12 @@ const ProtectedRoute = ({ permission }) => {
         //     // setPermissions(permissionsData);
         // };
 //===================================================================
-useEffect(()=>{     
+function handleChangeValue(){
+    setUpdate(permission);
+  };
+ 
+ useEffect(()=>{ 
+  handleChangeValue();
     async function fetchPermissi() {                
         const permissionsData = {};                 
           permissions.forEach(item => {             
