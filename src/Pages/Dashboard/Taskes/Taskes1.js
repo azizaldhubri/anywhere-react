@@ -18,8 +18,11 @@ import StringSlice from "../../../Helpers/StringSlice";
 import File_Name from "../../../Helpers/File_Name";
 import File_Path from "../../../Helpers/File_path";
 import { typeFile } from "./Files";
-export default function Taskes1(){
+import { WindowSize } from "../../../Context/WindowContext";
 
+export default function Taskes1(){
+ const WindowContext=useContext(WindowSize)
+  const windowSize=WindowContext.windowSize;
     const [activeTab, setActiveTab] = useState('البريد الوارد');
     const [activeLink, setActiveLink] = useState('');
     const [openForm, setOpenForm] = useState(false); 
@@ -176,7 +179,7 @@ const[loading,setLoading]=useState(false);
             <div                 
         className=" d-flex gap-2  w-100 align-items-center  p-1 mb-2 ps-4 pe-4 
         justify-content-between     flex-wrap "
-        style={{color:task.task_status=='Completed' ?'black':'red', height:'70px'  }}>       
+        style={{color:task.task_status=='Completed' ?'black':'red', height:windowSize<500 ?'120px':'70px'   }}>       
             <div className=" d-flex align-items-center justify-content-start  gap-2 flex-wrap fs-5 ">
             <div className=" d-flex align-items-center justify-content-between flex-wrap gap-3  ">
                 <h5 className="m-0">{task.id}</h5>
