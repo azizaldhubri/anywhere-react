@@ -78,7 +78,7 @@ function handleChangeValue(){
 
         };
          fetchPermissi();
-},[permissions]) 
+},[permission,permissions]) 
 
  
  //-------------------------------------------------------------------------------------------
