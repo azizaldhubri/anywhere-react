@@ -276,8 +276,7 @@ const Comment = ({ comment ,type}) => {
                         <div key={k}>
                         {typfile.name.includes(item.split('.').pop())&&(
                             <div>
-                        //  <img  src={typfile.type =='img'? ` ${typfile.pathimg}/${File_Path(item,i)}`:` ${typfile.pathimg}`} 
-                        // width='40px' height='40px' alt="img"></img>
+                       
                            
                             <img  src={typfile.type =='img'? ` ${typfile.pathimg}/${item}`:` ${typfile.pathimg}`} 
                                 width='40px' height='40px' alt="img"></img>  
