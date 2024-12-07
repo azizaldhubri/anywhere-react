@@ -279,7 +279,7 @@ const Comment = ({ comment ,type}) => {
                     
                             // <img  src={typfile.type =='img'? ` ${typfile.pathimg}/${item}`:` ${typfile.pathimg}`} 
                             //     width='40px' height='40px' alt="img"></img>
-                          <img  src={typfile.type =='img'? ` ${typfile.pathimg}/${File_Path(item,i)}`:` ${typfile.pathimg}`} 
+                          <img  src={typfile.type =='img'? ` ${typfile.pathimg}/${File_Name(item,i)}`:` ${typfile.pathimg}`} 
                         width='40px' height='40px' alt="img"></img>
                              
                         
