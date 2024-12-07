@@ -276,10 +276,10 @@ const Comment = ({ comment ,type}) => {
                         <div key={k}>
                         {typfile.name.includes(item.split('.').pop())&&(
                             <div>
-                       
+                        <img  src={typfile.type =='img'? ` ${typfile.pathimg}/${File_Path(item,i)}`:` ${typfile.pathimg}`} 
+                        width='40px' height='40px' alt="img"></img>  
                            
-                            <img  src={typfile.type =='img'? ` ${typfile.pathimg}/${item}`:` ${typfile.pathimg}`} 
-                                width='40px' height='40px' alt="img"></img>  
+                             
                         
                             <p className="m-0">{StringSlice((File_Name(item,i)),10)}</p>   
                             <a className="fs-6"  href={typfile.type =='img'?`${typfile.pathDownload}/${File_Path(item,i)}`
