@@ -5,8 +5,8 @@ export const typeFile=[
         name:'jpg',
         type:'img',
         src_type:'image/jpeg',     
-         pathimg:'https://free-001.yemenhosting.com/backend/storage/app/public/assets',                   
-        pathDownload:'https://free-001.yemenhosting.com/backend/storage/app/public/assets' ,            
+         pathimg:'https://free-001.yemenhosting.com/backend3/storage/app/public/assets',                   
+        pathDownload:'https://free-001.yemenhosting.com/backend3/storage/app/public/assets' ,            
         width:'40px' ,
         height:'40px',
         
@@ -17,7 +17,7 @@ export const typeFile=[
         type:'file',              
           src_type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         pathimg:require('../../../Assets/files/doc.png'),       
-        pathDownload:'https://free-001.yemenhosting.com/backend/storage/app/public/assets' ,
+        pathDownload:'https://free-001.yemenhosting.com/backend3/storage/app/public/assets' ,
         width:'40px' ,
         height:'40px',
        
