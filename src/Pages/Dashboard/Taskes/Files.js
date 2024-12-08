@@ -6,7 +6,7 @@ export const typeFile=[
         type:'img',
         src_type:'image/jpeg',             
          pathimg:'https://free-001.yemenhosting.com/backend3/storage/app/public/assets',                   
-        pathDownload:'https://free-001.yemenhosting.com/backend3/storage/app/public/assets' ,            
+        pathDownload:'https://free-001.yemenhosting.com/api/download' ,            
         width:'40px' ,
         height:'40px',
         
