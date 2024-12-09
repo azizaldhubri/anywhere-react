@@ -82,7 +82,8 @@ export default function AddTaskes(props){
             .then(e=>{
                 setForm((prevData) => ({
                     ...prevData,
-                    sender_name: e.data.name,
+                    // sender_name: e.data.name,
+                    sender_name: e.data.email,
                     sender_id: e.data.id,                    
                   })); 
                                       
