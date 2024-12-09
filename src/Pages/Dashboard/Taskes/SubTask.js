@@ -62,7 +62,8 @@ export default function SubTask(props){
         Axios.get(`${USER}`)
         .then((e)=>{
           // setUserName(e.data.name);
-          username.current=e.data.name;
+          // username.current=e.data.name;
+          username.current=e.data.email;
           userId.current=e.data.id;
           // setUserId(e.data.id);
           
