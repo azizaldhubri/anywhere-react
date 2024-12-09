@@ -1,49 +1,34 @@
 import {  faPenToSquare, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {Form , Table } from "react-bootstrap"
+import {Form  } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import {  useEffect, useState } from "react";
 import PaginatedItems from "../../Pages/Dashboard/Pagination/Pagination";
 import { Axios } from "../../Api/axios";
 import TranFormDate from "../../Helpers/TranFormDate";
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, PaginationItem, Select } from '@mui/material';
 
-// import { USER } from "../../Api/Api";
-
-export default function TableShow(props){
-    //defulte value
- 
+ export default function TableShow(props){ 
   
     // const p_user=window.location.pathname.slice(-5);
 
     const currentUser=props.currentUser || { name:''  } ;
     const Isadmin=props.role || { name:''  } ;
           
-        //    console.log(Isadmin)
     const[search,setSearch]=useState('')
     const[date,setDate]=useState('')
     const[filteredData,setFilteredData]=useState([])
     const[loadingSearch,setLoadingSearch]=useState(false)
     
-    
-    // search by front end---------------                                                         
-    //  const filteredData=props.data.filter((item)=>
-        //      item[props.Linksearch].toLowerCase().includes(search.toLowerCase()))
-    
-    //   function handleSearch(e){
-        //       setSearch(e.target.value)
-        //   }
-        
-        //----------------
+ 
         
         const filterdDatabyDate=props.data.filter(
             (item)=>TranFormDate(item.created_at)===date)
 
         const filterdSearchbyDate=filteredData.filter(
-            (item)=>TranFormDate(item.created_at)===date)
-
-            
+            (item)=>TranFormDate(item.created_at)===date)            
            
-            const showwitchData=
+     const showwitchData=
             date.length !==0 ?            
             search.length>0 ? 
             filterdSearchbyDate
@@ -75,20 +60,52 @@ export default function TableShow(props){
         //    const end=start + (+props.limit) ;
         //    const final=props.data.slice(start,end);
         
-       
+        //---------------------------------table------------------        
+    
 
-    //---------------------------------table------------------        
-        // 
+        const style_Cell=
+        {  maxWidth:100,
+          fontSize: '15px',  // تغيير حجم الخط
+          fontWeight: 'bold', // جعل الخط عريضًا
+          borderRight: '2px solid black', // إضافة border للخلايا
+          backgroundColor: '#d3d9db', // لون خلفية لتوضيح الحدود
+          borderColor:'#c2c5c5',
+          borderBottom:'3px solid gray',
+          textAlign: 'center'}
 
-     const headerShow=props.header.map((item,index)=><th key={index}>{item.name}</th>);
-            
-    //   Table body Show
-    //  const datashow=final.map((item,index)=>(
+          const body_Cell={
+            maxWidth:100,
+            fontSize: '15px',          
+            borderRight: '2px solid black',              
+            borderColor:'#c2c5c5',
+            borderBottom:'3px solid gray',
+            textAlign: 'center'
+          }
+ 
+     const headerShow=props.header.map((item,index)=> 
+        <TableCell 
+        key={index}
+        sx={style_Cell}
+                // sx={{ 
+        //     maxWidth:100,
+        //     fontSize: '15px',  // تغيير حجم الخط
+        //     fontWeight: 'bold', // جعل الخط عريضًا
+        //     borderRight: '2px solid black', // إضافة border للخلايا
+        //     backgroundColor: '#d3d9db', // لون خلفية لتوضيح الحدود
+        //     borderColor:'#c2c5c5',
+        //     borderBottom:'3px solid gray',
+        //     textAlign: 'center'
+        //   }}
+        >{item.name}</TableCell> 
+    );
+
+ 
+  
      const datashow=showwitchData.map((item,index)=>(        
-     <tr key={index} >         
-        <td>{item.id}</td>
+     <TableRow key={index} >         
+        <TableCell sx={body_Cell} >{item.id}</TableCell>
         {props.header.map((item2,index2)=>(
-            <td  key={index2} >
+            <TableCell  key={index2} sx={body_Cell} >
             
                 {item2.key==='image'?(
                     <img width='50px' src={item[item2.key]} alt="" />
@@ -102,13 +119,7 @@ export default function TableShow(props){
                    
                     ) 
                         :item2.key==="role"?
-                        ( item[item2.key]
-                        // item[item2.key] === '1995' ?('admin')   
-                        // : item[item2.key]  === '2001' ? ('User')
-                        // :item[item2.key] ==='1996'?('Writer' )  
-                        // :item[item2.key] ==='2002'?('تقنية معلومات' )  
-                        // : item[item2.key] ==='1999'&&('مدير المنتج')
-                        )
+                        ( item[item2.key] )
                         :item[item2.key]===currentUser.name ?(
                             <p style={{color:'red', margin:'0'}}>{item[item2.key]} (you)</p>
                         )
@@ -118,10 +129,10 @@ export default function TableShow(props){
                       
                     
                     
-            </td>
+            </TableCell>
         ))}
          {Isadmin==='admin' &&
-        <td >    
+        <TableCell sx={body_Cell} >    
             
             <div className="d-flex align-items-center  justify-content-center gap-3">
             <Link to={`${item.id}`}>                  
@@ -144,9 +155,9 @@ export default function TableShow(props){
         </div>
                 
             
-        </td>
+        </TableCell>
         }
-    </tr>)
+    </TableRow>)
     )
    
 return(
@@ -179,33 +190,50 @@ return(
    </Form.Control>
  </div>
 
-      <Table  striped bordered hover  >
+ <TableContainer component={Paper}
+        sx={{ 
+            // maxHeight: 200,  // تحديد الحد الأقصى للارتفاع
+            // overflow: 'auto',
+            // minWidth:1500  // تمكين التمرير عند الحاجة
+            width:'100%'
+          }}
+       >
+      <Table aria-label="simple table"
+      sx={{
+         width:'100%'
+      }}>
         
-    <thead className="border primary ">
-        <tr >
-            <th>id</th>
+    <TableHead className="border primary ">
+        <TableRow >
+        <TableCell  sx={style_Cell}>م</TableCell>
             {headerShow}
-            {Isadmin==='admin' &&
-          <th className="text-center">Action</th> 
+            {Isadmin==='admin' &&          
+          <TableCell  sx={style_Cell}>Action</TableCell>
          }           
-        </tr>
-    </thead>
-    <tbody  > 
+        </TableRow>
+    </TableHead>
+    <TableBody  > 
         {props.loading?( 
-        <tr className="text-center ">
+        <TableRow className="text-center ">
             <td colSpan={12}>Loading...</td>
-        </tr>):loadingSearch ?( 
-        <tr className="text-center">
+        </TableRow>):loadingSearch ?( 
+        <TableRow className="text-center">
             <td colSpan={12}>Searching...</td>
-        </tr>):(datashow )}
+        </TableRow>):(datashow )}
          
-    </tbody>
+    </TableBody>
 
-   </Table >
-   <div className="d-flex align-items-center justify-content-end flex-wrap">
+    </Table>
+    </TableContainer> 
+   <div className="d-flex align-items-center justify-content-end flex-wrap mt-1    w-50 "
+   style={{ float: 'left',}}>
    {(!search && !date)  && 
    ( <div className="col-1 ">
-   <Form.Select className="col-1   pe-3   " onChange={(e)=>props.setLimit(e.target.value)} aria-label="Default select example">
+   <Form.Select 
+   
+   className="col-1  ps-3   "
+   onChange={(e)=>props.setLimit(e.target.value)} aria-label="Default select example"
+   style={{ width: '70px',paddingLeft:'30px' ,fontSize:'15px' }}>
        
        <option value='3'>3</option>
        <option value='5'>5</option>
@@ -218,13 +246,14 @@ return(
 </div>)}  
  
 
-        
-        {(!search && !date) && (
-             <PaginatedItems setPage={props.setPage} 
-             itemsPerPage={props.limit} 
-             data={props.data}
-             total={props.total}/>
-        )}
+        <div className="mt-3">
+            {(!search && !date) && (
+                <PaginatedItems setPage={props.setPage} 
+                itemsPerPage={props.limit} 
+                data={props.data}
+                total={props.total}/>
+            )}
+        </div>
 
    </div> 
  </>
