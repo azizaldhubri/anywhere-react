@@ -1,6 +1,6 @@
-// export const baseUrl=`http://127.0.0.1:8000/api`;
+export const baseUrl=`http://127.0.0.1:8000/api`;
 // export const baseUrl=`https://free-001.yemenhosting.com/api`;
-export const baseUrl=`https://backend1hr-production1.up.railway.app/api`;
+// export const baseUrl=`https://backend1hr-production1.up.railway.app/api`;
 
 
 export const REGISTER= 'register';
